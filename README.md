@@ -30,10 +30,15 @@ wk-8-Jenny-light/
 │── app/
 
 │ ├── main.py # FastAPI entry point
+
 │ ├── database.py # DB connection setup
+
 │ ├── models.py # SQLAlchemy models
+
 │ ├── schemas.py # Pydantic schemas
+
 │ ├── crud.py # CRUD logic
+
 │ ├── init.py
 
 │── venv/ # Virtual environment (ignored in git)
@@ -58,29 +63,38 @@ cd LibraryDB-FastAPI
 
 ### 2. Create & Activate Virtual Environment
 # Windows (PowerShell)
+```bash
 python -m venv venv
 .\venv\Scripts\activate
+```
 
 # macOS/Linux
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ### 4. Setup MySQL Database
 
 Log into MySQL and create a database:
-
+```bash
 CREATE DATABASE LibraryDB;
-
+```
 
 Update app/database.py with your MySQL username & password:
-
+```bash
 SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://root:yourpassword@localhost/LibraryDB"
+```
 
 ### 5. Run the Application
+```bash
 uvicorn app.main:app --reload
+```
 
 ## 📖 API Documentation
 
@@ -92,6 +106,7 @@ ReDoc → http://127.0.0.1:8000/redoc
 
 ## 🔗 Example Requests
 Create a Member
+```bash
 {
   "first_name": "Jennifer",
   "last_name": "Omoregie",
@@ -108,6 +123,7 @@ Create a Book
   "published_year": 2022,
   "copies_available": 5
 }
+```
 
 ## 🛠 Tech Stack
 
