@@ -7,6 +7,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Library CRUD API")
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Library CRUD API! Visit /docs for interactive documentation."}
+
 # Dependency
 def get_db():
     db = SessionLocal()
